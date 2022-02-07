@@ -71,7 +71,9 @@ function displayTasksFromLocalStorage() {
     const tasksFromLs = JSON.parse(localStorage.getItem('tasks'));
     const html = addHtmlForListItem(tasksFromLs);
     todoTasks.innerHTML = html;
-    todoFilter.style.display = 'flex';
+    if (tasksFromLs) {
+        todoFilter.style.display = 'flex';
+    }
 }
 
 displayTasksFromLocalStorage();
